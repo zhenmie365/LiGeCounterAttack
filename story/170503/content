@@ -1,0 +1,12 @@
+    There encounter collision of httpClient and httpCore while vcops jar using version of 4.3.2 and chef jar using 4.1.2. It seem that "NoSuchFieldError" error came out when application running. 
+
+ClassLoader classLoader = MyClass.class.getClassLoader();
+URL resource = classLoader.getResource("org/apache/http/message/BasicLineFormatter.class");
+System.out.println(resource);
+
+Above code help me focus where the point is.
+
+And then replace version 4.3.2 over version 4.1.2 in chef pom.xml, the application run ok.
+
+Index:
+http://stackoverflow.com/questions/21864521/java-lang-nosuchfielderror-org-apache-http-message-basiclineformatter-instance
