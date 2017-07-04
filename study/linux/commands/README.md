@@ -1,0 +1,2 @@
+# infos of linux commands
+
