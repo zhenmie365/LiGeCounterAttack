@@ -6,8 +6,8 @@ find <br>
 </li>
 <li>
 du <br>
-  -h human-readable
-  --max-depth defind hierarchy of folder want to show
-  such as : du -h --max-depth=1 /usr
+  -h human-readable <br>
+  --max-depth defind hierarchy of folder want to show <br>
+  such as : du -h --max-depth=1 /usr <br>
 </li>
 </ul>
