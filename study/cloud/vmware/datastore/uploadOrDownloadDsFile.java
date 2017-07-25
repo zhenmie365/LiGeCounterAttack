@@ -19,48 +19,52 @@ import java.security.cert.X509Certificate;
 import java.util.HashMap;
 import java.util.Map;
 
-public class FolderTest {
-	// vcIp,username and password of vCenter
-	private static String vcIp = "192.168.20.64";//"192.168.6.199";
-	private static String userName = "administrator@vsphere.local";
-	private static String password = "2wsx@WSX"; //"P@ssw0rd";
+/**
+ * upload/download file to/from Esxi host Datastore.
+ * Excemple: java uploadOrDownloadDsFile 192.168.6.127 administrator@vpshere.local 123456 /
+ * 192.168.6.2 6.2datastore1 remoteTestFile/remoteFileName.iso /home/localTestFile/localFileName;
+ */
+public class uploadOrDownloadDsFile {
 
 	// main
 	public static void main(String[] args) throws Exception{
-		httpAccessToHostFile();
+		if(args.length!=7)
+		{
+			System.out.println("Usage: java uploadOrDownloadDsFile <vcIp> " +
+					"<username> <password> <hostIp> <datastoreName> <remoteFilePath> " +
+					"<localFilePath>");
+			System.exit(0);
+		}
+		httpAccessToHostFile(args);
 	}
 
 	// get ServiceInstance of vc
-	public static ServiceInstance getInitSi() throws Exception {
-		ServiceInstance si  = new ServiceInstance(new URL("https://" + vcIp + "/sdk"), userName, password, true);
+	public static ServiceInstance getInitSi(String[] args) throws Exception {
+		ServiceInstance si  = new ServiceInstance(new URL("https://" + args[0] + "/sdk"), args[1], args[2], true);
 		return si;
 	}
 
 	// main class of datastore file operation
-	public static void httpAccessToHostFile() throws Exception {
+	public static void httpAccessToHostFile(String[] args) throws Exception {
 		// ip of host in which file datastore is
-		String hostIp = "192.168.20.71";//"192.168.6.3";//"192.168.6.2";
+		String hostIp = args[3];
 
 		// source file of downloading
-		String destinationFile = "刘畅测试机器（勿删）/刘畅测试机器（勿删）_1-000001-delta.vmdk";//"testLzy1";
+		String destinationFile = args[5];
 
 		// destination file of uploading
-		String destinationFilePath = "asdfasdf/刘畅测试机器（勿删）_1-000001-delta.vmdk"; // "刘畅测试机器（勿删）/刘畅测试机器（勿删）_1-000001-delta.vmdk";//"A计算机/testZip.zip";//"testLzy1";
+		String destinationFilePath = args[5];
 
 		// datastore name in which the file is
-		String dsName = "datastore1 (1)";//"6.3本地SAS";//"testLzy";//"6.2本地SSD";
+		String dsName = args[4];
 
 		// source file of uploading
-		String sourceFilePath = "/home/zhenmie/Documents/vmware/ds/file/刘畅测试机器（勿删）_1-000001-delta.vmdk";//"/home/zhenmie/Downloads/wine-qqintl.zip";//"/home/zhenmie/Documents/vmware/ds/file/efficent-upload-files-to-datastore.pl";
-
-		// no needed
-		String dcName = "新建数据中心 1";
+		String sourceFilePath = args[6];
 
 		// destination file of  downloading
-		String downloadDestFile = "/home/zhenmie/Documents/vmware/ds/file/刘畅测试机器（勿删）_1-000001-delta.vmdk";
+		String downloadDestFile = args[6];
 
-		ServiceInstance si = getInitSi();
-		//String sessionCookie = si.getServerConnection().getSessionStr();
+		ServiceInstance si = getInitSi(args);
 
 		// create url
 		String putUrl = "https://" + hostIp + "/folder/" + destinationFilePath +
@@ -316,6 +320,7 @@ public class FolderTest {
 
 	private static void doHttpPostFromPython(String sessionCookie, String dcName,
 											 String dsName, String sourceFilePath, String destinationFile) throws IOException {
+		String vcIp = "";
 		String url = "https://" + vcIp + ":443" + "/folder/" + destinationFile;
 		System.out.println("url : " + url);
 
@@ -349,4 +354,3 @@ public class FolderTest {
 		}
 	}
 }
-
