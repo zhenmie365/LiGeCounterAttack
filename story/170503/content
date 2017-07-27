@@ -10,3 +10,5 @@ And then replace version 4.3.2 over version 4.1.2 in chef pom.xml, the applicati
 
 Index:
 http://stackoverflow.com/questions/21864521/java-lang-nosuchfielderror-org-apache-http-message-basiclineformatter-instance
+
+# Testing ssh cert
