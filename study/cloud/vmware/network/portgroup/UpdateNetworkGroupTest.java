@@ -1,5 +1,3 @@
-package com.sunment.cloud.vmware.network;
-
 import com.vmware.vim25.*;
 import com.vmware.vim25.mo.HostNetworkSystem;
 import com.vmware.vim25.mo.HostSystem;

@@ -1,5 +1,3 @@
-package com.sunment.cloud.vmware.network;
-
 import com.vmware.vim25.*;
 import com.vmware.vim25.mo.DistributedVirtualPortgroup;
 import com.vmware.vim25.mo.InventoryNavigator;

@@ -1,5 +1,3 @@
-package com.sunment.cloud.vmware.folder;
-
 import com.sunment.cloud.util.ObjectUtil;
 import com.vmware.vim25.SessionManagerGenericServiceTicket;
 import com.vmware.vim25.SessionManagerHttpServiceRequestSpec;
