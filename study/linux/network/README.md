@@ -20,4 +20,10 @@
    &nbsp;#ethtool -S veth1;&nbsp;// 获取另一端的接口设备的序列号 X <br>
    &nbsp;#ip netns exec nsName ip link | grep X; &nbsp;//就可以知道另一端的设备名称.<br>
  </li>
+ <li>
+  brctl:<br>
+  将端口连接起来并实现类似交换机那样的多对多通信.<br>
+  #brctl addbr xxx; // 添加网桥 <br>
+  #brctl addif xxx device; // 添加接口给网桥 <br>
+ </li>
 </ul>
