@@ -12,4 +12,7 @@
   But it would come error "not getXXX method" when using mvn compile project, unless you remove all entities which uses @Getter into a isolated source folder named "lombok" which is at the same level of source folder "java".<br> 
   get details in <a href="http://www.jianshu.com/p/b03d66af04d4">this</a> and <a href="http://blog.csdn.net/rickyit/article/details/51315733">this</a> <br>
  </li>
+ <li>
+  Of course, it's good of using lombok with Gradle in eclipse.<br>
+ </li>
 </ul>
