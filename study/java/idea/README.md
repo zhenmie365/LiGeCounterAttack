@@ -15,4 +15,17 @@
  <li>
   Of course, it's good of using lombok with Gradle in eclipse.<br>
  </li>
+ <li>
+  Chinese:<br>
+  对于怎么将lombok插入到idea使用,请参照以下步骤:<br>
+1.首先idea要安装lombok插件,file -> Settings -> plugins -> 搜索"lombok",安装插件,然后重启idea<br>
+<br>
+2.可能还是出现"getXXX"或"setXXX"找不到的问题,要如下处理:<br>
+   a.file -> settings -> build,Execution,Deployment -> Compiler -> Annotation Processors -> 勾选"Enable annotation processing"<br>
+<br>
+   b.file -> settings -> build,Execution,Deployment -> Compiler -> "Shared build process VM options" 填入 "-javaagent:lombok.jar",后面的jar包为本地lombok.jar地址.<br>
+<br>
+3.上面是编译遇到的问题,下面是mvn deploy时遇到的问题,请参照:<br>
+  <a href="http://www.jianshu.com/p/b03d66af04d4"> this</a><br> 
+ </li>
 </ul>
