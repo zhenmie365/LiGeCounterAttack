@@ -27,5 +27,6 @@
 <br>
 3.上面是编译遇到的问题,下面是mvn deploy时遇到的问题,请参照:<br>
   <a href="http://www.jianshu.com/p/b03d66af04d4"> this</a><br> 
+  特别注意,用lombok的实体最好是封装类(如Integer,Short)等,最好不要是int,因为可能引用set/get时会出现转换类型问题.<br>
  </li>
 </ul>
