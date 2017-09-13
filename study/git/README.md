@@ -23,3 +23,35 @@ simple talking of git commands
     <a href="https://git-scm.com/book/zh/v2/Git-%E5%88%86%E6%94%AF-%E5%88%86%E6%94%AF%E7%9A%84%E6%96%B0%E5%BB%BA%E4%B8%8E%E5%90%88%E5%B9%B6">details of branch operation</a>
 </li>
 </ul>
+
+# steps of create repo
+For example, the Url of my reop is : https://github.com/zhenmie365/pythonStudy.git.
+<ul>
+    <li>
+        First, I create one repo on github web.
+    </li>
+    <li>
+        Then, initialize local repo folder:<br>
+        $ git init<br>
+    </li>
+    <li>
+        create README.md file.<br>
+        $ echo "# python Study" >> README.md <br>
+    </li>
+    <li>
+        add README.md <br>
+        $ git add README.md <br>
+    </li>
+    <li>
+        commit and make a comment.<br>
+        $ git commit -m "first commit" <br>
+    </li>
+    <li>
+        remote add <br>
+        $ git remote add origin https://github.com/zhenmie365/pythonStudy.git <br>
+    </li>
+    <li>
+        Last, push.<br>
+        $ git push -u origin master <br>
+    </li>
+</ul>
