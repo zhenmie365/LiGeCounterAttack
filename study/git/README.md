@@ -22,6 +22,11 @@ simple talking of git commands
     # git push --set-upstream origin testBranch <br>
     <a href="https://git-scm.com/book/zh/v2/Git-%E5%88%86%E6%94%AF-%E5%88%86%E6%94%AF%E7%9A%84%E6%96%B0%E5%BB%BA%E4%B8%8E%E5%90%88%E5%B9%B6">details of branch operation</a>
 </li>
+<li>
+    6.remove remote file<br>
+    commont followed:<br>
+    # git rm -r --cached removeFolder/removeFile<br>
+</li>
 </ul>
 
 # steps of create repo
